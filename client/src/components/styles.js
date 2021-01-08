@@ -11,8 +11,8 @@ export const Card = styled.div`
 export const Container = styled.div`
   align-content: center;
   align-items: center;
-  background-color: #0779e4;
-  display: flex;
+  background-color: ${(props) => props.backgroundColor};
+  display: ${(props) => props.display || 'flex'};
   height: 100vh;
   justify-content: center;
 `;
@@ -41,6 +41,7 @@ export const Text = styled.span`
   display: flex;
   font-size: ${(props) => props.fontSize || '15px'};
   justify-content: ${(props) => props.justifyContent || 'center'};
+  color: ${(props) => props.color || '#000'};
   margin: 20px;
 `;
 

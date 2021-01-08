@@ -5,7 +5,7 @@ import {
 } from '../../components/styles';
 
 const Recovery: React.FC = () => (
-  <Container>
+  <Container backgroundColor="#0779e4">
     <Card width="50%">
       <Text fontSize="25px">Perdi minha senha</Text>
       <Label>
