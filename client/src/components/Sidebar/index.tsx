@@ -6,13 +6,13 @@ const Menu = [
   {
     data: {
       name: 'Home',
-      link: '/',
+      link: '/dashboard',
     },
   },
   {
     data: {
       name: 'Criar',
-      link: '/create',
+      link: '/dashboard/create',
     },
   },
   {

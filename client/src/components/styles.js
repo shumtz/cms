@@ -1,11 +1,12 @@
 import styled from 'styled-components';
 
 export const Card = styled.div`
+  width: ${(props) => props.width || '100%'};
   background-color: #fff;
   border-radius: 05px;
   box-shadow: 0px 0px 05px rgba(0, 0, 0, 0.5);
   padding: 20px;
-  width: ${(props) => props.width};
+  margin: ${(props) => props.margin};
 `;
 
 export const Container = styled.div`

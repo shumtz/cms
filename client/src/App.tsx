@@ -1,10 +1,11 @@
 import React from 'react';
-import { BrowserRouter, Route, Switch } from 'react-router-dom';
+import { Route, BrowserRouter, Switch } from 'react-router-dom';
 import erro404 from 'pages/Erro/e404';
-import Home from './pages/Home';
-import Login from './pages/Login';
-import RecoveryPassword from './pages/RecoveryPassword';
-import Dashboard from './pages/Dashboard';
+import Dashboard from 'pages/Dashboard/Home';
+import Create from 'pages/Dashboard/Create';
+import Home from 'pages/Home';
+import Login from 'pages/Login';
+import RecoveryPassword from 'pages/RecoveryPassword';
 import './global.css';
 
 const App: React.FC = () => (
@@ -13,8 +14,9 @@ const App: React.FC = () => (
       <Route path="/" component={Home} exact />
       <Route path="/login" component={Login} exact />
       <Route path="/recovery-password" component={RecoveryPassword} exact />
-      <Route path="/dashboard" component={Dashboard} />
-      <Route path="*" component={erro404} />
+      <Route path="/dashboard" component={Dashboard} exact />
+      <Route path="/dashboard/create" component={Create} exact />
+      <Route path="*" component={erro404} exact />
     </Switch>
   </BrowserRouter>
 );
