@@ -7,6 +7,7 @@ export const Card = styled.div`
   box-shadow: 0px 0px 05px rgba(0, 0, 0, 0.5);
   padding: 20px;
   margin: ${(props) => props.margin};
+  box-sizing: border-box;
 `;
 
 export const Container = styled.div`
@@ -51,6 +52,10 @@ export const Label = styled.label`
 export const TextArea = styled.textarea`
   width: 100%;
   font-size: 20px;
+`;
+
+export const Switch = styled.input`
+  // Change code for Toggle Switch
 `;
 
 export const Form = styled.form``;

@@ -3,7 +3,7 @@ import { Editor } from '@tinymce/tinymce-react';
 import SideBar from '../../../components/Sidebar';
 import { Container } from '../style';
 import {
-  Button, Card, Input, Form,
+  Button, Card, Input, Form, Switch, Label,
 } from '../../../components/styles';
 
 const Dashboard: React.FC = () => (
@@ -13,21 +13,27 @@ const Dashboard: React.FC = () => (
       <Form>
         <Input placeholder="Titulo" />
         <Editor
-          initialValue="<p>This is the initial content of the editor</p>"
+          apiKey="sr7pi472l09htcjfcm4ggostq1xs8q6c5e1s0wb7u62t681l"
           init={{
-            height: 500,
+            height: 620,
             menubar: false,
             plugins: [
               'advlist autolink lists link image charmap print preview anchor',
-              'searchreplace visualblocks code fullscreen',
+              'searchreplace visualblocks code fullscreen emoticons',
               'insertdatetime media table paste code help wordcount',
             ],
             toolbar:
              `undo redo | formatselect | bold italic backcolor |
              alignleft aligncenter alignright alignjustify |
-             bullist numlist outdent indent | removeformat | help`,
+             bullist numlist outdent indent | emoticons 
+             insertdatetime code fullscreen | media removeformat | 
+             help`,
           }}
         />
+        <Label>
+          Rascunho
+          <Switch type="checkbox" />
+        </Label>
         <Button>Enviar</Button>
       </Form>
     </Card>

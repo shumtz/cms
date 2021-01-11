@@ -11,6 +11,12 @@ const Menu = [
   },
   {
     data: {
+      name: 'Posts',
+      link: '/dashboard/posts',
+    },
+  },
+  {
+    data: {
       name: 'Criar',
       link: '/dashboard/create',
     },
