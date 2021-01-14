@@ -3,22 +3,38 @@ import { Link } from 'react-router-dom';
 import SideBar from '../../../components/Sidebar';
 import { Container } from '../style';
 import { Button, Card, Text } from '../../../components/styles';
+import api from '../../../services/api';
 
-const Posts: React.FC = () => (
-  <Container>
-    <SideBar />
-    <Card margin="02%">
-      <Link to="/dashboard/create"><Button>Criar novo</Button></Link>
-      <Card margin="10px 0px">
-        <Text
-          fontSize="30px"
-          justifyContent="flex-start"
-        >
-          Titulo
-        </Text>
+const Posts: React.FC = () => {
+  const [data, setData] = React.useState<any>(undefined);
+  async function handlePosts() {
+    const response = await api.get('/api');
+    const json = await response.data;
+    setData(json);
+  }
+
+  React.useEffect(() => {
+    handlePosts();
+  }, []);
+
+  return (
+    <Container>
+      <SideBar />
+      <Card margin="02%">
+        <Link to="/dashboard/create"><Button>Criar novo</Button></Link>
+        {data && data!.map((items: any) => (
+          <Card margin="10px 0px" key={items.id}>
+            <Text
+              fontSize="30px"
+              justifyContent="flex-start"
+            >
+              {items.title}
+            </Text>
+          </Card>
+        ))}
       </Card>
-    </Card>
-  </Container>
-);
+    </Container>
+  );
+};
 
 export default Posts;
