@@ -11,6 +11,12 @@ const Menu = [
   },
   {
     data: {
+      name: 'Posts',
+      link: '/dashboard/posts',
+    },
+  },
+  {
+    data: {
       name: 'Criar',
       link: '/dashboard/create',
     },
@@ -28,7 +34,7 @@ const SideBar: React.FC = () => (
     <h2>Dashboard</h2>
     <Ul>
       {Menu.map((items) => (
-        <Link to={items.data.link}><Li>{items.data.name}</Li></Link>
+        <Link to={items.data.link} key={items.data.link}><Li>{items.data.name}</Li></Link>
       ))}
     </Ul>
   </Container>

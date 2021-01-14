@@ -6,6 +6,7 @@ import Create from 'pages/Dashboard/Create';
 import Home from 'pages/Home';
 import Login from 'pages/Login';
 import RecoveryPassword from 'pages/RecoveryPassword';
+import Posts from 'pages/Dashboard/Posts';
 import './global.css';
 
 const App: React.FC = () => (
@@ -15,6 +16,7 @@ const App: React.FC = () => (
       <Route path="/login" component={Login} exact />
       <Route path="/recovery-password" component={RecoveryPassword} exact />
       <Route path="/dashboard" component={Dashboard} exact />
+      <Route path="/dashboard/posts" component={Posts} exact />
       <Route path="/dashboard/create" component={Create} exact />
       <Route path="*" component={erro404} exact />
     </Switch>
