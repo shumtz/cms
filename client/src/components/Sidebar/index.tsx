@@ -34,7 +34,7 @@ const SideBar: React.FC = () => (
     <h2>Dashboard</h2>
     <Ul>
       {Menu.map((items) => (
-        <Link to={items.data.link}><Li>{items.data.name}</Li></Link>
+        <Link to={items.data.link} key={items.data.link}><Li>{items.data.name}</Li></Link>
       ))}
     </Ul>
   </Container>
