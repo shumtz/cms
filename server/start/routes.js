@@ -18,4 +18,8 @@ const Route = use('Route')
 
 Route.on('/').render('welcome')
 Route.get('/api/', 'PostController.index')
-Route.post('/api/create', 'PostController.store')
+Route.post('/api/post/create', 'PostController.store')
+Route.put('/api/post/:id', 'PostController.update')
+Route.get('/api/post/:id', 'PostController.show')
+Route.delete('/api/post/:id', 'PostController.destroy')
+

@@ -39,8 +39,6 @@ class PostController {
       'draft'
     ])
 
-    slugify('some string')
-
     await Post.create(show)
 
     return response.status('200').json({
@@ -59,18 +57,15 @@ class PostController {
    * @param {View} ctx.view
    */
   async show ({ params, request, response, view }) {
-  }
+    const { id } = params;
+    const post = await Post.find(id);
 
-  /**
-   * Render a form to update an existing post.
-   * GET posts/:id/edit
-   *
-   * @param {object} ctx
-   * @param {Request} ctx.request
-   * @param {Response} ctx.response
-   * @param {View} ctx.view
-   */
-  async edit ({ params, request, response, view }) {
+    return response.status(200).json({
+      status: 200,
+      response: {
+        post
+      }
+    })
   }
 
   /**
@@ -82,6 +77,23 @@ class PostController {
    * @param {Response} ctx.response
    */
   async update ({ params, request, response }) {
+    const { id } = params;
+    const post = await Post.find(id);
+
+    const update = request.only([
+      'title',
+      'content',
+      'draft'
+    ]);
+
+    await post.merge(update)
+
+    await post.save();
+
+    return response.status(200).json({
+      status: 200,
+      response: `Success Update.`
+    })
   }
 
   /**
@@ -93,6 +105,15 @@ class PostController {
    * @param {Response} ctx.response
    */
   async destroy ({ params, request, response }) {
+    const { id } = params;
+    const post = await Post.find(id)
+    
+    await post.delete()
+
+    return response.status(200).json({
+      status: '200',
+      response: `Id: ${id} Deleted!`
+    })
   }
 }
 
