@@ -1,8 +1,9 @@
 import styled from 'styled-components';
 
 export const Card = styled.div`
+  display: ${(props) => props.display};
   width: ${(props) => props.width || '100%'};
-  background-color: #fff;
+  background-color: var(--white);
   border-radius: 05px;
   box-shadow: 0px 0px 05px rgba(0, 0, 0, 0.5);
   padding: 20px;
@@ -29,20 +30,25 @@ export const Input = styled.input`
 `;
 
 export const Button = styled.button`
-  background: #4cbbb9;
+  background: var(--blue-aqua);
   border: none;
-  color: #fff;
+  color: var(--white);
   cursor: pointer;
   font-size: 25px;
+  border-radius: 05px;
   height: ${(props) => props.height || '45px'};
   width: ${(props) => props.width || '100%'};
+
+  :active {
+    box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.5);
+  }
 `;
 
 export const Text = styled.span`
   display: flex;
   font-size: ${(props) => props.fontSize || '15px'};
   justify-content: ${(props) => props.justifyContent || 'center'};
-  color: ${(props) => props.color || '#000'};
+  color: ${(props) => props.color || 'var(--black)'};
   margin: 20px;
 `;
 

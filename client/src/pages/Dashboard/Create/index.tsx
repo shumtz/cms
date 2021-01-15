@@ -10,7 +10,7 @@ import {
 const Dashboard: React.FC = () => {
   const [title, setTitle] = React.useState<string>();
   const [post, setPost] = React.useState<string>();
-  const [value, setValue] = React.useState<boolean>(false);
+  const [value, setValue] = React.useState<boolean>();
   function handleChange() {
     setValue(!value);
   }

@@ -5,7 +5,7 @@ import {
 } from '../../components/styles';
 
 const Login: React.FC = () => (
-  <Container backgroundColor="#0779e4">
+  <Container backgroundColor="var(--primary-blue)">
     <Card width="50%">
       <Text fontSize="25px">Login</Text>
       <Form>

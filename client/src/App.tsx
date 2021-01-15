@@ -6,8 +6,9 @@ import Create from 'pages/Dashboard/Create';
 import Home from 'pages/Home';
 import Login from 'pages/Login';
 import RecoveryPassword from 'pages/RecoveryPassword';
-import Posts from 'pages/Dashboard/Posts';
 import Post from 'pages/Dashboard/Post';
+import Posts from 'pages/Dashboard/Posts';
+import Settings from 'pages/Dashboard/Settings';
 import './global.css';
 
 const App: React.FC = () => (
@@ -20,6 +21,7 @@ const App: React.FC = () => (
       <Route path="/dashboard/posts" component={Posts} exact />
       <Route path="/dashboard/post/:id" component={Post} exact />
       <Route path="/dashboard/create" component={Create} exact />
+      <Route path="/dashboard/settings" component={Settings} exact />
       <Route path="*" component={erro404} exact />
     </Switch>
   </BrowserRouter>

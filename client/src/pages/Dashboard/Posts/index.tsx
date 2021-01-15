@@ -6,7 +6,7 @@ import { Button, Card, Text } from '../../../components/styles';
 import api from '../../../services/api';
 
 const Posts: React.FC = () => {
-  const [data, setData] = React.useState<any>(undefined);
+  const [data, setData] = React.useState<any>();
   async function handlePosts() {
     const response = await api.get('/api');
     const json = await response.data;

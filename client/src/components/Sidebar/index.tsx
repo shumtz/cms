@@ -1,6 +1,9 @@
+import { Text } from 'components/styles';
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Container, Ul, Li } from './style';
+import {
+  Container, Ul, Li, Header,
+} from './style';
 
 const Menu = [
   {
@@ -24,7 +27,7 @@ const Menu = [
   {
     data: {
       name: 'Configuracoes',
-      link: '/settings',
+      link: '/dashboard/settings',
     },
   },
   {
@@ -37,7 +40,9 @@ const Menu = [
 
 const SideBar: React.FC = () => (
   <Container>
-    <h2>Dashboard</h2>
+    <Header>
+      <Text fontSize="30px" justifyContent="center" color="#fff">Dashboard</Text>
+    </Header>
     <Ul>
       {Menu.map((items) => (
         <Link to={items.data.link} key={items.data.link}><Li>{items.data.name}</Li></Link>
