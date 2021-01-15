@@ -23,6 +23,12 @@ const Menu = [
   },
   {
     data: {
+      name: 'Configuracoes',
+      link: '/settings',
+    },
+  },
+  {
+    data: {
       name: 'Sair',
       link: '/logout',
     },

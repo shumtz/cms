@@ -8,17 +8,14 @@ import {
 } from '../../../components/styles';
 
 const Dashboard: React.FC = () => {
-  const [newtitle, setTitle] = React.useState<string>();
+  const [title, setTitle] = React.useState<string>();
   const [post, setPost] = React.useState<string>();
   const [value, setValue] = React.useState<boolean>(false);
   function handleChange() {
     setValue(!value);
   }
-  function handleEditor(content: any) {
-    setPost(content);
-  }
   async function postSend() {
-    const response = api.post('api/post/create', { title: newtitle, content: post, draft: value });
+    const response = api.post('api/post/create', { title, content: post, draft: value });
 
     return response;
   }
@@ -32,7 +29,7 @@ const Dashboard: React.FC = () => {
             apiKey="sr7pi472l09htcjfcm4ggostq1xs8q6c5e1s0wb7u62t681l"
             init={{
               height: 620,
-              menubar: false,
+              menubar: true,
               plugins: [
                 'advlist autolink lists link image charmap print preview anchor',
                 'searchreplace visualblocks code fullscreen emoticons',
@@ -45,7 +42,7 @@ const Dashboard: React.FC = () => {
              insertdatetime code fullscreen | media removeformat |
              help`,
             }}
-            onEditorChange={handleEditor}
+            onEditorChange={setPost}
           />
           <Label>
             Rascunho

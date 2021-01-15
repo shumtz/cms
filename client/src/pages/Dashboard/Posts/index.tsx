@@ -24,12 +24,14 @@ const Posts: React.FC = () => {
         <Link to="/dashboard/create"><Button>Criar novo</Button></Link>
         {data && data!.map((items: any) => (
           <Card margin="10px 0px" key={items.id}>
-            <Text
-              fontSize="30px"
-              justifyContent="flex-start"
-            >
-              {items.title}
-            </Text>
+            <Link to={`/dashboard/post/${items.id}`}>
+              <Text
+                fontSize="30px"
+                justifyContent="flex-start"
+              >
+                {items.title}
+              </Text>
+            </Link>
           </Card>
         ))}
       </Card>

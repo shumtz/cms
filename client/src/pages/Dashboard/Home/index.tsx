@@ -7,7 +7,15 @@ const Dashboard: React.FC = () => (
   <Container>
     <SideBar />
     <Card margin="02%">
-      <h1>Home</h1>
+      <Card>
+        <h2>Posts</h2>
+      </Card>
+      <Card>
+        <h2>Comentarios</h2>
+      </Card>
+      <Card>
+        <h2>Lidos</h2>
+      </Card>
     </Card>
   </Container>
 );
