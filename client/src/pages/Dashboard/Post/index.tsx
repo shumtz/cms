@@ -1,4 +1,5 @@
 import React from 'react';
+import { Helmet } from 'react-helmet';
 import SideBar from 'components/Sidebar';
 import Message from 'components/Message';
 import {
@@ -39,6 +40,9 @@ const Post: React.FC = () => {
 
   return (
     <Container>
+      <Helmet>
+        <title>{title}</title>
+      </Helmet>
       <SideBar />
       <Card margin="02%">
         <Form>

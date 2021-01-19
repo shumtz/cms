@@ -1,4 +1,5 @@
 import React from 'react';
+import { Helmet } from 'react-helmet';
 import { Route, BrowserRouter, Switch } from 'react-router-dom';
 import erro404 from 'pages/Erro/e404';
 import Dashboard from 'pages/Dashboard/Home';
@@ -13,6 +14,9 @@ import './global.css';
 
 const App: React.FC = () => (
   <BrowserRouter>
+    <Helmet>
+      <title>CMS</title>
+    </Helmet>
     <Switch>
       <Route path="/" component={Home} exact />
       <Route path="/login" component={Login} exact />

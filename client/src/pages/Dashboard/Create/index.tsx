@@ -1,4 +1,5 @@
 import React from 'react';
+import { Helmet } from 'react-helmet';
 import { Editor } from '@tinymce/tinymce-react';
 import SideBar from 'components/Sidebar';
 import api from 'services/api';
@@ -21,6 +22,9 @@ const Dashboard: React.FC = () => {
   }
   return (
     <Container>
+      <Helmet>
+        <title>Criar Publicação</title>
+      </Helmet>
       <SideBar />
       <Card margin="02%">
         <Form>

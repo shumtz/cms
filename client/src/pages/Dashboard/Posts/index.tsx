@@ -1,4 +1,5 @@
 import React from 'react';
+import { Helmet } from 'react-helmet';
 import { Link } from 'react-router-dom';
 import SideBar from '../../../components/Sidebar';
 import { Container } from '../style';
@@ -19,6 +20,9 @@ const Posts: React.FC = () => {
 
   return (
     <Container>
+      <Helmet>
+        <title>Publicações</title>
+      </Helmet>
       <SideBar />
       <Card margin="02%">
         <Link to="/dashboard/create"><Button>Criar novo</Button></Link>

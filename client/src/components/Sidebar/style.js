@@ -15,12 +15,12 @@ export const Ul = styled.ul`
 `;
 
 export const Li = styled.li`
-  box-shadow: 0px 0px 02px rgba(255, 255, 255, 0.5);
   border-radius: 05px;
-  padding: 10px;
-  margin: 10px;
+  border:1px solid var(--blue-aqua);
   color: var(--white);
   cursor: pointer;
+  margin: 10px;
+  padding: 10px;
 
   &:hover {
     opacity: 0.6;
