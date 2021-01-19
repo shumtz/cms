@@ -1,5 +1,6 @@
 import React from 'react';
 import SideBar from 'components/Sidebar';
+import Message from 'components/Message';
 import {
   Card, Container, Input, Button, Form,
 } from 'components/styles';
@@ -12,17 +13,24 @@ const Post: React.FC = () => {
   const [data, setData] = React.useState<any>();
   const [title, setTitle] = React.useState<string>();
   const [post, setPost] = React.useState<string>();
+  const [status, setStatus] = React.useState<any>();
 
   async function handleData() {
     const response = await api.get(`/api/post/${id}`);
     const json = await response.data;
-    setData(json.response.post);
+    setData(json.message.post);
   }
 
   async function updatePost() {
-    const response = await api.put(`/api/post/${id}`, { title, content: post });
+    const response = await api.put(`/api/post/${id}`, { title, message: post });
+
+    setStatus(response.data.message);
 
     return response;
+  }
+
+  function clear() {
+    setStatus(undefined);
   }
 
   React.useEffect(() => {
@@ -55,7 +63,10 @@ const Post: React.FC = () => {
             }}
             onEditorChange={setPost}
           />
-          <Button onClick={updatePost} type="submit">Enviar</Button>
+          <Button onClick={updatePost} type="button">Enviar</Button>
+          {status ? (
+            <Message content={status} click={clear} />
+          ) : ''}
         </Form>
       </Card>
     </Container>

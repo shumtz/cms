@@ -26,7 +26,7 @@ const Posts: React.FC = () => {
           <Card margin="10px 0px" key={items.id}>
             <Link to={`/dashboard/post/${items.id}`}>
               <Text
-                fontSize="30px"
+                fontSize="25px"
                 justifyContent="flex-start"
               >
                 {items.title}

@@ -1,11 +1,11 @@
 import React from 'react';
 import { Editor } from '@tinymce/tinymce-react';
-import SideBar from '../../../components/Sidebar';
-import api from '../../../services/api';
-import { Container } from '../style';
+import SideBar from 'components/Sidebar';
+import api from 'services/api';
 import {
   Button, Card, Input, Form, Label, Switch,
-} from '../../../components/styles';
+} from 'components/styles';
+import { Container } from '../style';
 
 const Dashboard: React.FC = () => {
   const [title, setTitle] = React.useState<string>();
@@ -15,7 +15,7 @@ const Dashboard: React.FC = () => {
     setValue(!value);
   }
   async function postSend() {
-    const response = api.post('api/post/create', { title, content: post, draft: value });
+    const response = await api.post('api/post/create', { title, content: post, draft: value });
 
     return response;
   }

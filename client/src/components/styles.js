@@ -9,7 +9,6 @@ export const Card = styled.div`
   padding: 20px;
   margin: ${(props) => props.margin};
   box-sizing: border-box;
-  overflow: auto;
 `;
 
 export const Container = styled.div`
@@ -63,7 +62,6 @@ export const TextArea = styled.textarea`
 
 export const Switch = styled.input`
   // Change code for Toggle Switch
-  
 `;
 
 export const Form = styled.form``;

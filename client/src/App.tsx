@@ -3,7 +3,7 @@ import { Route, BrowserRouter, Switch } from 'react-router-dom';
 import erro404 from 'pages/Erro/e404';
 import Dashboard from 'pages/Dashboard/Home';
 import Create from 'pages/Dashboard/Create';
-import Home from 'pages/Home';
+import Home from 'pages/Index/Home';
 import Login from 'pages/Login';
 import RecoveryPassword from 'pages/RecoveryPassword';
 import Post from 'pages/Dashboard/Post';
