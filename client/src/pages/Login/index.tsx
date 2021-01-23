@@ -1,11 +1,13 @@
 import React from 'react';
+import Title from 'components/Helmet';
 import { Link } from 'react-router-dom';
 import {
   Button, Card, Container, Input, Text, Form,
 } from '../../components/styles';
 
 const Login: React.FC = () => (
-  <Container backgroundColor="#0779e4">
+  <Container backgroundColor="var(--primary-blue)">
+    <Title title="Login" />
     <Card width="50%">
       <Text fontSize="25px">Login</Text>
       <Form>

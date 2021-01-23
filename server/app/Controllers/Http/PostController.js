@@ -62,7 +62,7 @@ class PostController {
 
     return response.status(200).json({
       status: 200,
-      response: {
+      message: {
         post
       }
     })
@@ -92,7 +92,7 @@ class PostController {
 
     return response.status(200).json({
       status: 200,
-      response: `Success Update.`
+      message: `Success Update.`
     })
   }
 
@@ -112,7 +112,7 @@ class PostController {
 
     return response.status(200).json({
       status: '200',
-      response: `Id: ${id} Deleted!`
+      message: `Id: ${id} Deleted!`
     })
   }
 }

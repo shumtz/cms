@@ -1,15 +1,36 @@
 import React from 'react';
+import api from 'services/api';
+import Title from 'components/Helmet';
 import SideBar from '../../../components/Sidebar';
 import { Container } from '../style';
-import { Card } from '../../../components/styles';
+import { Card, Text } from '../../../components/styles';
 
-const Dashboard: React.FC = () => (
-  <Container>
-    <SideBar />
-    <Card margin="02%">
-      <h1>Home</h1>
-    </Card>
-  </Container>
-);
+const Dashboard: React.FC = () => {
+  const [data, setData] = React.useState<any>(0);
+  async function handleCount() {
+    const response = await api.get('/api');
+    const json = await response.data;
+    setData(json);
+  }
+
+  React.useEffect(() => {
+    handleCount();
+  }, []);
+  return (
+    <Container>
+      <Title title="Home" />
+      <SideBar />
+      <Card margin="02%" display="flex">
+        <Card margin="20px">
+          <Text fontSize="25px" justifyContent="flex-start">
+            Posts postados:
+            {' '}
+            {data.length}
+          </Text>
+        </Card>
+      </Card>
+    </Container>
+  );
+};
 
 export default Dashboard;
