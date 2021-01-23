@@ -1,5 +1,5 @@
 import React from 'react';
-import { Helmet } from 'react-helmet';
+import Title from 'components/Helmet';
 import { Link } from 'react-router-dom';
 import {
   Button, Card, Container, Input, Text, Form,
@@ -7,9 +7,7 @@ import {
 
 const Login: React.FC = () => (
   <Container backgroundColor="var(--primary-blue)">
-    <Helmet>
-      <title>Login</title>
-    </Helmet>
+    <Title title="Login" />
     <Card width="50%">
       <Text fontSize="25px">Login</Text>
       <Form>

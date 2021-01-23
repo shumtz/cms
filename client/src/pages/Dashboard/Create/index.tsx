@@ -1,11 +1,11 @@
 import React from 'react';
-import { Helmet } from 'react-helmet';
-import { Editor } from '@tinymce/tinymce-react';
 import SideBar from 'components/Sidebar';
 import api from 'services/api';
 import {
   Button, Card, Input, Form, Label, Switch,
 } from 'components/styles';
+import Editor from 'components/Editor';
+import Title from 'components/Helmet';
 import { Container } from '../style';
 
 const Dashboard: React.FC = () => {
@@ -22,32 +22,12 @@ const Dashboard: React.FC = () => {
   }
   return (
     <Container>
-      <Helmet>
-        <title>Criar Publicação</title>
-      </Helmet>
+      <Title title="Criar Post" />
       <SideBar />
       <Card margin="02%">
         <Form>
           <Input placeholder="Titulo" onChange={(e: any) => setTitle(e.target.value)} />
-          <Editor
-            apiKey="sr7pi472l09htcjfcm4ggostq1xs8q6c5e1s0wb7u62t681l"
-            init={{
-              height: 620,
-              menubar: true,
-              plugins: [
-                'advlist autolink lists link image charmap print preview anchor',
-                'searchreplace visualblocks code fullscreen emoticons',
-                'insertdatetime media table paste code help wordcount',
-              ],
-              toolbar:
-             `undo redo | formatselect | bold italic backcolor |
-             alignleft aligncenter alignright alignjustify |
-             bullist numlist outdent indent | emoticons
-             insertdatetime code fullscreen | media removeformat |
-             help`,
-            }}
-            onEditorChange={setPost}
-          />
+          <Editor editorChange={setPost} initialValue={post} />
           <Label>
             Rascunho
             <Switch

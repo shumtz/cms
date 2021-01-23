@@ -6,20 +6,20 @@ const fadeIn = keyframes`
 `;
 
 export const Card = styled.div`
-  position: absolute;
-  top: 0;
-  left: 100%;
-  transform: translateX(-120%);
+  animation: ${fadeIn} ease 1s;
+  background-color: var(--white);
+  border-radius: 05px;
+  box-shadow: 0px 0px 05px rgba(0, 0, 0, 0.5);
   display: flex;
   justify-content: space-between;
-  padding: 15px;
+  left: 100%;
   margin: 20px;
-  box-shadow: 0px 0px 05px rgba(0, 0, 0, 0.5);
-  background-color: var(--white);
+  padding: 15px;
+  position: absolute;
+  top: 0;
+  transform: translateX(-120%);
   width: 20%;
   z-index: 9999;
-  border-radius: 05px;
-  animation: ${fadeIn} ease 1s;
 `;
 
 export const Text = styled.span`

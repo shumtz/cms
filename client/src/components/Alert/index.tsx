@@ -10,7 +10,7 @@ const Message: React.FC<Props> = ({ content, click }) => (
   <>
     <Card>
       <Text>{content}</Text>
-      <Button onClick={click}>X</Button>
+      <Button onClick={click} type="button">X</Button>
     </Card>
   </>
 );

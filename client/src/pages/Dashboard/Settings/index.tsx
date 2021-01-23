@@ -1,5 +1,5 @@
 import React from 'react';
-import { Helmet } from 'react-helmet';
+import Title from 'components/Helmet';
 import SideBar from '../../../components/Sidebar';
 import { Container } from '../style';
 import {
@@ -8,9 +8,7 @@ import {
 
 const Dashboard: React.FC = () => (
   <Container>
-    <Helmet>
-      <title>Configurações</title>
-    </Helmet>
+    <Title title="Configurações" />
     <SideBar />
     <Card margin="02%">
       <Text fontSize="25px" justifyContent="flex-start">Configuracoes</Text>

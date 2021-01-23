@@ -1,13 +1,13 @@
 import React from 'react';
-import { Helmet } from 'react-helmet';
+import Title from 'components/Helmet';
 import SideBar from 'components/Sidebar';
-import Message from 'components/Message';
+import Message from 'components/Alert';
 import {
   Card, Container, Input, Button, Form,
 } from 'components/styles';
 import { useParams } from 'react-router-dom';
 import api from 'services/api';
-import { Editor } from '@tinymce/tinymce-react';
+import Editor from 'components/Editor';
 
 const Post: React.FC = () => {
   const { id } : any = useParams();
@@ -31,42 +31,22 @@ const Post: React.FC = () => {
   }
 
   function clear() {
-    setStatus(undefined);
+    setStatus('');
   }
 
   React.useEffect(() => {
+    clear();
     handleData();
   }, []);
 
   return (
     <Container>
-      <Helmet>
-        <title>{title}</title>
-      </Helmet>
+      <Title title="Post" />
       <SideBar />
       <Card margin="02%">
         <Form>
           <Input placeholder="Titulo" defaultValue={data && data.title} onChange={(e: any) => setTitle(e.target.value)} />
-          <Editor
-            apiKey="sr7pi472l09htcjfcm4ggostq1xs8q6c5e1s0wb7u62t681l"
-            initialValue={data && data.content}
-            init={{
-              height: 620,
-              menubar: true,
-              plugins: [
-                'advlist autolink lists link image charmap print preview anchor',
-                'searchreplace visualblocks code fullscreen emoticons',
-                'insertdatetime media table paste code help wordcount',
-              ],
-              toolbar:
-            `undo redo | formatselect | bold italic backcolor |
-            alignleft aligncenter alignright alignjustify |
-            bullist numlist outdent indent | emoticons
-            insertdatetime code fullscreen | media removeformat |
-            help`,
-            }}
-            onEditorChange={setPost}
-          />
+          <Editor editorChange={setPost} initialValue={data && data.content} />
           <Button onClick={updatePost} type="button">Enviar</Button>
           {status ? (
             <Message content={status} click={clear} />

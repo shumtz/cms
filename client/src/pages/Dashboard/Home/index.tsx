@@ -1,5 +1,6 @@
 import React from 'react';
 import api from 'services/api';
+import Title from 'components/Helmet';
 import SideBar from '../../../components/Sidebar';
 import { Container } from '../style';
 import { Card, Text } from '../../../components/styles';
@@ -17,6 +18,7 @@ const Dashboard: React.FC = () => {
   }, []);
   return (
     <Container>
+      <Title title="Home" />
       <SideBar />
       <Card margin="02%" display="flex">
         <Card margin="20px">
