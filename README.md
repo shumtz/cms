@@ -23,6 +23,11 @@ npm i -g @adonisjs/cli
 // Enter in folder
 cd server/
 
+// Configure .env in project
+
+// Migrations for BD
+adonis migration:run
+
 // Run Project
 adonis serve
 
